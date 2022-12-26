@@ -1,0 +1,35 @@
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title= title
+    link(rel='stylesheet' type="text/css" href='/css/style.css')
+    script(src="https://unpkg.com/wanakana")
+  body
+    main
+        video(src="https://ia904509.us.archive.org/3/items/judas-jujutsu-kaisen-s-01_202107/%5BErai-raws%5D%20Jujutsu%20Kaisen%20-%2001%20~%2024%20%5B1080p%5D%5BMultiple%20Subtitle%5D/%5BErai-raws%5D%20Jujutsu%20Kaisen%20-%2001%20%5B1080p%5D%5BMultiple%20Subtitle%5D.mp4", type="video/mp4" controls)#video
+            track(label="Japanese" kind="metadata" srclang="ja" src="./jujustsu-kaisen-ep1.vtt" default)
+        div.subtitles-container
+            div#subtitles   
+
+    // popup to show translation
+    div#popup
+        div#popup-content
+            div#popup-title(data-title="Translation").highlight 
+              h3 Translation
+            p#popup-text
+            button#popup-close
+                span#popup-close-icon ×
+            div#popup-actions
+              button#popup-save
+                span#save-text Save to Deck
+                span#save-icon +
+              button#popup-more
+                span#more-text Look up
+                span#more-icon ▼
+    
+    canvas#canvas
+
+    script(crossorigin="anonymous")
+        include app.js
