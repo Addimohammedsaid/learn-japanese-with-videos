@@ -23,9 +23,7 @@ popup.addEventListener("click", function (e) {
 	if (e.target === popup) {
 		popup.style.display = "none";
 		video.play();
-		subtitles.querySelectorAll("span").forEach((span) => {
-			span.classList.remove("highlight");
-		});
+		subtitles.querySelector(".highlight").classList.remove("highlight");
 	}
 });
 
@@ -34,9 +32,7 @@ popupClose.addEventListener("click", function () {
 	popup.style.display = "none";
 	video.play();
 	// remove highlighted span
-	subtitles.querySelectorAll("span").forEach((span) => {
-		span.classList.remove("highlight");
-	});
+	subtitles.querySelector(".highlight").classList.remove("highlight");
 });
 
 // read local vtt file
@@ -61,7 +57,6 @@ video.addEventListener("timeupdate", () => {
 		// if current time is greater than start time and less than end time
 		if (currentTime > startTime && currentTime < endTime) {
 			const segs = wanakana.tokenize(currentSubtitle.text);
-
 			const subtitle = segs
 				.map((seg) => {
 					if (wanakana.isJapanese(seg)) {
@@ -70,10 +65,10 @@ video.addEventListener("timeupdate", () => {
 					return seg;
 				})
 				.join("");
-
-			// set subtitle to subtitles div
 			subtitles.innerHTML = subtitle;
 		}
+	} else {
+		subtitles.innerHTML = "";
 	}
 });
 
