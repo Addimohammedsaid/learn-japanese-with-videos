@@ -3,7 +3,8 @@
 basically trying to create a app that will help learn japanese with your favorite anime/movies and tv shows.
 
 ## Preview
-![Preview Image](https://raw.githubusercontent.com/Video-Japanese-Learning/video-japanese-learning/main/preview.png)
+
+![Preview Image](https://user-images.githubusercontent.com/41261680/209686609-1aaedabb-428f-42ff-b7c4-85e703b68516.png)
 
 ## How to use (in development)
 
