@@ -107,18 +107,16 @@ subtitles.addEventListener("click", async (e) => {
 
 		// if response is not empty
 		if (data) {
+			// update data-title attribute of popup
+			popupTitle.setAttribute("data-title", word);
+
 			// if kanji we render with furigana above title
 			if (wanakana.isKanji(word)) {
 				const reading = data.reading;
-				popupTitle.innerHTML = `<span class="furigana">${reading}</span><br><h3>${word}</h3>`;
+				popupTitle.innerHTML = `<p class="furigana">${reading}</p><h3>${word}</h3>`;
 			} else {
 				popupTitle.innerHTML = `<h3>${word}</h3>`;
 			}
-
-			popupTitle.innerHTML = `<h3>${word}</h3>`;
-
-			// update data-title attribute of popup
-			popupTitle.setAttribute("data-title", word);
 
 			// show popup with translation
 			popup.style.display = "block";

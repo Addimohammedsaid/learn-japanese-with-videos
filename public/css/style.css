@@ -84,6 +84,14 @@ button {
 	transform: translate(-40%, -40%);
 }
 
+#popup-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: relative;
+}
+
 #popup #popup-content #popup-title h3 {
 	font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 	color: white;
@@ -94,20 +102,16 @@ button {
 		1px 1px 0 #333;
 }
 
-/* add font border with violet color in popup title */
 #popup #popup-content #popup-title h3::before {
 	content: attr(data-title);
+	font-size: 3.5rem;
 	position: absolute;
-	top: 20px;
+	top: 10px;
 	left: 0;
 	color: red;
 	text-shadow: -2px -2px 0 red, 2px -2px 0 red, -2px 2px 0 red, 2px 2px 0 red;
 	z-index: -1;
 	-webkit-filter: blur(0.25px);
-}
-
-.highlight {
-	color: #ff0000;
 }
 
 #popup #popup-content #popup-text {
@@ -142,5 +146,13 @@ button {
 }
 
 #popup #popup-content #popup-close:hover {
+	color: #ff0000;
+}
+
+.furigana {
+	color: white;
+}
+
+.highlight {
 	color: #ff0000;
 }
