@@ -183,4 +183,7 @@ popupSave.addEventListener("click", () => {
 
 	// Simulate a click on the link
 	link.click();
+
+	// remove link
+	link.remove();
 });
