@@ -8,28 +8,18 @@ html
     script(src="https://unpkg.com/wanakana")
   body
     main
-        video(src="https://ia904509.us.archive.org/3/items/judas-jujutsu-kaisen-s-01_202107/%5BErai-raws%5D%20Jujutsu%20Kaisen%20-%2001%20~%2024%20%5B1080p%5D%5BMultiple%20Subtitle%5D/%5BErai-raws%5D%20Jujutsu%20Kaisen%20-%2001%20%5B1080p%5D%5BMultiple%20Subtitle%5D.mp4", type="video/mp4" controls)#video
-            track(label="Japanese" kind="metadata" srclang="ja" src="./jujustsu-kaisen-ep1.vtt" default)
-        div.subtitles-container
-            div#subtitles   
+      section#upload-section
+          form(enctype='multipart/form-data').form
+            div.file-input-container
+              label(for='upload-video').file-input-label='Upload Video'
+              input(type="file" name='upload-video' accept="video/*").file-input#fileInputVideo
+            div.file-input-container
+              label(for='upload-subtitles').file-input-label='Upload Subtitles'
+              input(type="file" name='upload-subtitles' accept="*.vtt").file-input#fileInputSubtitles
+          button.btn.btn-secondary#submitButton Watch
+    script
+      include upload.js
 
-    // popup to show translation
-    div#popup
-        div#popup-content
-            div#popup-title(data-title="Translation") 
-              h3 Translation
-            p#popup-text
-            button#popup-close
-                span#popup-close-icon ×
-            div#popup-actions
-              button#popup-save
-                span#save-text Save to Deck
-                span#save-icon +
-              button#popup-more
-                span#more-text Look up
-                span#more-icon ▼
-    
-    canvas#canvas
 
-    script(crossorigin="anonymous")
-        include app.js
+
+

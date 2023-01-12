@@ -1,0 +1,33 @@
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title= title
+    link(rel='stylesheet' type="text/css" href='/css/style.css')
+    script(src="https://unpkg.com/wanakana")
+    body
+        main
+            section#video-player
+                video(src="/uploads/stream.mp4", type="video/mp4" controls)#video
+                    track(label="Japanese" kind="metadata" srclang="ja" src="/uploads/subtitles.vtt" default)
+                div.subtitles-container
+                    div#subtitles 
+            div#popup
+                div#popup-content
+                    div#popup-title(data-title="word")     
+                    p#popup-text
+                    button#popup-close
+                        span#popup-close-icon ×
+                    div#popup-actions
+                        button#popup-save
+                            span#save-text Save to Deck
+                            span#save-icon +
+                        button#popup-more
+                            span#more-text Look up
+                            span#more-icon ▼
+    
+        canvas#canvas(style="display:none")
+
+    script(crossorigin="anonymous")
+        include app.js

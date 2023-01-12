@@ -171,6 +171,16 @@ popupSave.addEventListener("click", () => {
 	// draw text
 	context.fillText(word, canvas.width / 2, canvas.height / 2);
 
-	// get image data
-	const data = canvas.toDataURL("image/png");
+	// Get the data URI of the image
+	const dataURI = canvas.toDataURL();
+
+	// Create a link element
+	const link = document.createElement("a");
+
+	// Set the link's href and download attributes
+	link.href = dataURI;
+	link.download = "myImage.png";
+
+	// Simulate a click on the link
+	link.click();
 });
