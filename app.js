@@ -45,6 +45,11 @@ app.get("/upload", function (req, res) {
 	const fs = require("fs");
 	const path = require("path");
 
+	// if no public/uploads folder, create one
+	if (!fs.existsSync(path.join(__dirname, "public/uploads"))) {
+		fs.mkdirSync(path.join(__dirname, "public/uploads"));
+	}
+
 	// get all files in public folder
 	const files = fs.readdirSync(path.join(__dirname, "public/uploads"));
 
