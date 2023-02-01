@@ -5,6 +5,7 @@ html
     meta(http-equiv='X-UA-Compatible' content='ie=edge')
     title= title
     link(rel='stylesheet' type="text/css" href='/css/style.css')
+    link(rel='stylesheet' type="text/css" href='/css/upload.css')
     script(src="https://unpkg.com/wanakana")
   body
     main
@@ -16,7 +17,7 @@ html
             div.file-input-container
               label(for='upload-subtitles').file-input-label='Upload Subtitles'
               input(type="file" name='upload-subtitles' accept="*.vtt").file-input#fileInputSubtitles
-          button.btn.btn-secondary#submitButton Watch
+          button#submitButton Watch ▶
     script
       include upload.js
 

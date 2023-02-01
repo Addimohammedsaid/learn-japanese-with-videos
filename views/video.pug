@@ -5,11 +5,12 @@ html
     meta(http-equiv='X-UA-Compatible' content='ie=edge')
     title= title
     link(rel='stylesheet' type="text/css" href='/css/style.css')
+    link(rel='stylesheet' type="text/css" href='/css/video.css')
     script(src="https://unpkg.com/wanakana")
     body
         main
             section#video-player
-                video(src="/uploads/stream.mp4", type="video/mp4" controls)#video
+                video(src="/uploads/video.mp4", type="video/mp4" controls)#video
                     track(label="Japanese" kind="metadata" srclang="ja" src="/uploads/subtitles.vtt" default)
                 div.subtitles-container
                     div#subtitles 
